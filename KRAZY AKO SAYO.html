@@ -1,0 +1,56 @@
+<html>
+
+
+<title>Krazy</title>
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+#yes {
+    background-color: rgb(9, 255, 0);
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    padding: 12px 24px;
+  }
+#hinde {
+    background-color: rgb(255, 0, 0);
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    padding: 12px 24px;
+  }
+#question{
+    color: aqua;
+    font-size: 24px;
+}
+.wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+</style>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <p id="question">Cute ko?</p>
+            <button class="btn" id="yes">Yes</button>
+            <button class="btn" id="hinde">Hinde</button>
+        </div>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById('hinde');
+        const yesBtn = document.getElementById('yes');
+        const ques = document.getElementById('question');
+        noBtn.addEventListener("click", ()=>{
+            let rand = Math.floor(Math.random() * (500 - 100) + 1);
+            let rand2 = Math.floor(Math.random() * (-300 - 100) + 1);
+            noBtn.style.transform = "translate("+rand+"px,"+rand2+"px)";
+        });
+
+        yesBtn.addEventListener("click", ()=>{
+            ques.innerHTML = "Salamat HAHAHAHAH"
+        })
+    </script>
+</body>
+</html>
