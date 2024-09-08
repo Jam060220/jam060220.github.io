@@ -1,56 +1,92 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            background-color: black;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
 
+        .container {
+            text-align: center;
+        }
 
-<title>Krazy</title>
-<link rel="stylesheet" href="css/style.css">
+        h1 {
+            font-size: 3em;
+            animation: glitch 2s infinite;
+        }
 
-<style>
+        .login-box {
+            border: 2px solid red;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
 
-#yes {
-    background-color: rgb(9, 255, 0);
-    color: rgb(0, 0, 0);
-    font-size: 24px;
-    padding: 12px 24px;
-  }
-#hinde {
-    background-color: rgb(255, 0, 0);
-    color: rgb(0, 0, 0);
-    font-size: 24px;
-    padding: 12px 24px;
-  }
-#question{
-    color: rgb(0, 0, 0);
-    font-size: 45px;
-}
-.wrapper{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-</style>
+        input {
+            background-color: black;
+            border: 1px solid red;
+            color: #00ff00;
+            padding: 10px;
+            margin: 10px 0;
+            width: 90%;
+        }
+
+        input[type="submit"] {
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #00ff00;
+            color: black;
+        }
+
+        .warning {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+
+        /* Glitch animation */
+        @keyframes glitch {
+            0% {
+                text-shadow: 1px 1px red;
+            }
+            25% {
+                text-shadow: 2px 2px red, -1px -1px #00ff00;
+            }
+            50% {
+                text-shadow: 3px 3px #00ff00, -2px -2px red;
+            }
+            75% {
+                text-shadow: 1px 1px red, 2px 2px #00ff00;
+            }
+            100% {
+                text-shadow: 2px 2px #00ff00;
+            }
+        }
+    </style>
+</head>
 <body>
-    <div class="wrapper">
-        <div class="container">
-            <p id="question">Cute ko?</p>
-            <button class="btn" id="yes">Yes</button>
-            <button class="btn" id="hinde">Hinde</button>
+    <div class="container">
+        <h1>Login</h1>
+        <div class="login-box">
+            <form>
+                <input type="text" placeholder="Username" required><br>
+                <input type="password" placeholder="Password" required><br>
+                <input type="submit" value="Hack In">
+            </form>
         </div>
+        <p class="warning">Unauthorized Access Will Be Logged!</p>
     </div>
-
-    <script>
-        const noBtn = document.getElementById('hinde');
-        const yesBtn = document.getElementById('yes');
-        const ques = document.getElementById('question');
-        noBtn.addEventListener("click", ()=>{
-            let rand = Math.floor(Math.random() * (500 - 100) + 1);
-            let rand2 = Math.floor(Math.random() * (-300 - 100) + 1);
-            noBtn.style.transform = "translate("+rand+"px,"+rand2+"px)";
-        });
-
-        yesBtn.addEventListener("click", ()=>{
-            ques.innerHTML = "Salamat kiss ko be HAHAHAHAH"
-        })
-    </script>
 </body>
 </html>
